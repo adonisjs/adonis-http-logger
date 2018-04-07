@@ -4,7 +4,7 @@ Register the provider inside `start/app.js` file.
 
 ```js
 const providers = [
-  '@adonisjs/http-loggger/providers/LoggerProvider'
+  '@adonisjs/http-logger/providers/LoggerProvider'
 ]
 ```
 

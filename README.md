@@ -1,7 +1,7 @@
 # Adonis Http Logger
 > Add-on to log your Http requests using Adonis inbuilt logger.
 
-<img src="http://res.cloudinary.com/adonisjs/image/upload/q_100/v1497112678/adonis-purple_pzkmzt.svg" width="200px" align="right" hspace="30px" vspace="140px">
+![](https://res.cloudinary.com/adonisjs/image/upload/q_100/v1523126720/Adonis%20Logger.png)
 
 ## Setup
 Start by installing it from npm.
@@ -18,7 +18,7 @@ Register the provider inside `start/app.js` file.
 
 ```js
 const providers = [
-  '@adonisjs/http-loggger/providers/LoggerProvider'
+  '@adonisjs/http-logger/providers/LoggerProvider'
 ]
 ```
 
@@ -31,9 +31,9 @@ You have to modify the existing `config/app.js` file and the following setting.
 
 ```js
 module.exports = {
-	http: {
-		loggerEnv: ['development', 'production']
-	}
+  http: {
+    loggerEnv: ['development', 'production']
+  }
 }
 ```
 
@@ -46,3 +46,4 @@ When `json:true` config is set. It will log request properties as a JSON object,
 
 Check the following screenshot when `json=true` and logs are sent to **Loggly**.
 
+![](http://res.cloudinary.com/adonisjs/image/upload/v1523126728/adonis-logger-loggly.png)
