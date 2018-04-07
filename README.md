@@ -1,5 +1,7 @@
 # Adonis Http Logger
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/adonisjs/adonis-http-logger.svg)](https://greenkeeper.io/)
+
 Add-on to log your Http requests using Adonis inbuilt logger.
 
 <img src="http://res.cloudinary.com/adonisjs/image/upload/q_100/v1497112678/adonis-purple_pzkmzt.svg" width="200px" align="right" hspace="30px" vspace="140px">
