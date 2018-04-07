@@ -1,0 +1,51 @@
+{
+  "name": "@adonisjs/http-logger",
+  "version": "1.0.0",
+  "description": "Http request logger for AdonisJs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "japa"
+  },
+  "private": true,
+  "keywords": [
+    "adonisjs",
+    "adonis-framework"
+  ],
+  "author": "virk",
+  "license": "MIT",
+  "devDependencies": {
+    "@adonisjs/sink": "^1.0.13",
+    "cz-conventional-changelog": "^2.1.0",
+    "japa": "^1.0.5",
+    "japa-cli": "^1.0.1",
+    "standard": "^10.0.3",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "on-finished": "^2.3.0",
+    "pretty-ms": "^3.1.0"
+  },
+  "standard": {
+    "globals": [
+      "use"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adonisjs/adonis-http-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adonisjs/adonis-http-logger/issues"
+  },
+  "homepage": "https://github.com/adonisjs/adonis-http-logger#readme"
+}
