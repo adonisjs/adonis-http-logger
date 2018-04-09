@@ -46,4 +46,4 @@ When `json:true` config is set. It will log request properties as a JSON object,
 
 Check the following screenshot when `json=true` and logs are sent to **Loggly**.
 
-![](http://res.cloudinary.com/adonisjs/image/upload/v1523126728/adonis-logger-loggly.png)
+![](http://res.cloudinary.com/adonisjs/image/upload/v1523247361/adonis-logger-loggly.png)
