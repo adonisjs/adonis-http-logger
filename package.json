@@ -8,7 +8,6 @@
     "pretest": "npm run lint",
     "test": "japa"
   },
-  "private": true,
   "keywords": [
     "adonisjs",
     "adonis-framework"
