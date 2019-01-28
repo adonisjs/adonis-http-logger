@@ -14,6 +14,7 @@ const { ServiceProvider } = require('@adonisjs/fold')
 class LoggerProvider extends ServiceProvider {
   boot () {
     const env = use('Adonis/Src/Config').get('app.http.loggerEnv')
+    const ignoredUrls = use('Adonis/Src/Config').get('app.http.ignoredUrls')
 
     /**
      * Hook only when enabled for current NODE_ENV
@@ -24,8 +25,10 @@ class LoggerProvider extends ServiceProvider {
       const Logger = require('../src/Logger')
 
       HttpContext.onReady(function (ctx) {
-        const logger = new Logger(ctx, AdonisLogger)
-        logger.hook()
+        if (!ignoredUrls.includes(ctx.request.url())) {
+          const logger = new Logger(ctx, AdonisLogger)
+          logger.hook()
+        }
       })
     }
   }
