@@ -89,12 +89,13 @@ class Logger {
   log (url, method, statusCode, startedAt, code) {
     const ms = prettyMs(this._diffHrTime(startedAt))
     const logLevel = this._getLogLevel(statusCode)
+    const now = new Date().toISOString()
 
     /**
      * Log normally when json is not set to true
      */
     if (!this.isJson) {
-      this.Logger[logLevel]('%s %s %s %s', method, statusCode, url, ms)
+      this.Logger[logLevel]('%s | %s %s %s %s', now, method, statusCode, url, ms)
       return
     }
 
@@ -114,7 +115,7 @@ class Logger {
    */
   hook () {
     const start = process.hrtime()
-    const url = this.request.url()
+    const url = this.request.originalUrl()
     const method = this.request.method()
 
     onFinished(this.res, (error, res) => {

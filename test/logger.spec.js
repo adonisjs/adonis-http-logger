@@ -44,7 +44,7 @@ test.group('Logger', (group) => {
     const server = http.createServer((req, res) => {
       const request = {
         method: () => req.method,
-        url: () => req.url
+        originalUrl: () => req.url
       }
 
       const response = {
@@ -71,7 +71,7 @@ test.group('Logger', (group) => {
     const server = http.createServer((req, res) => {
       const request = {
         method: () => req.method,
-        url: () => req.url
+        originalUrl: () => req.url
       }
 
       const response = {
@@ -99,7 +99,7 @@ test.group('Logger', (group) => {
     const server = http.createServer((req, res) => {
       const request = {
         method: () => req.method,
-        url: () => req.url
+        originalUrl: () => req.url
       }
 
       const response = {
@@ -135,7 +135,7 @@ test.group('Logger', (group) => {
     const server = http.createServer((req, res) => {
       const request = {
         method: () => req.method,
-        url: () => req.url
+        originalUrl: () => req.url
       }
 
       const response = {
@@ -170,7 +170,7 @@ test.group('Logger', (group) => {
     const server = http.createServer((req, res) => {
       const request = {
         method: () => req.method,
-        url: () => req.url
+        originalUrl: () => req.url
       }
 
       const response = {
@@ -185,10 +185,10 @@ test.group('Logger', (group) => {
       }, 200)
     })
 
-    await supertest(server).get('/')
-    assert.equal(adLogger.messages.info[0], '%s %s %s %s')
-    assert.equal(adLogger.messages.info[1], 'GET')
-    assert.equal(adLogger.messages.info[2], 200)
-    assert.equal(adLogger.messages.info[3], '/')
+    await supertest(server).get('/test?query=OK')
+    assert.equal(adLogger.messages.info[0], '%s | %s %s %s %s')
+    assert.equal(adLogger.messages.info[2], 'GET')
+    assert.equal(adLogger.messages.info[3], 200)
+    assert.equal(adLogger.messages.info[4], '/test?query=OK')
   })
 })
